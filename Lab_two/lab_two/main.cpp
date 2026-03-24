@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Function declarations
+
 bool problem_3();
 void problem_5();
 void problem_7();
@@ -15,7 +15,7 @@ int main() {
     int option;
     
     do {
-        // Display menu
+      
         cout << "\n=== MENU ===" << endl;
         cout << "3. Execute Problem 3" << endl;
         cout << "5. Execute Problem 5" << endl;
