@@ -83,6 +83,119 @@ void problem_7(){
 
 }
 
+void problem_11(){
+    const int filas = 15;
+    const int asientos = 20;
+
+    char sala[filas][asientos];
+
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < asientos; j++)
+        {
+            sala[i][j] = '_';
+        }
+    }
+
+    int opcion = 0;
+
+    while (opcion != 4)
+    {
+        cout << "MENU" << endl;
+        cout << "1. Mostrar sala" << endl;
+        cout << "2. Reservar asiento"<< endl;
+        cout << "3. Cancelar reserva"<< endl;
+        cout << "4. Salir "<< endl;
+        cout << "Seleccione: ";
+        cin >> opcion;
+
+        if (opcion == 1)
+        {
+            cout << "   ";
+            for (int j = 0; j < asientos; j++)
+                cout << j + 1 << " ";
+            cout << endl;
+
+            for (int i = 0; i < filas; i++)
+            {
+                cout << char('A' + i) << "  ";
+                for (int j = 0; j < asientos; j++)
+                    cout << sala[i][j] << " ";
+                cout << endl;
+            }
+        }
+
+        else if (opcion == 2)
+        {
+            char fila;
+            int asiento;
+
+            cout << "Fila (A-O): ";
+            cin >> fila;
+            cout << "Asiento (1-20): ";
+            cin >> asiento;
+
+            int f = fila - 'A';
+            int a = asiento - 1;
+
+            if (f >= 0 && f < filas && a >= 0 && a < asientos)
+            {
+                if (sala[f][a] == '_')
+                {
+                    sala[f][a] = 'X';
+                    cout << "Reservado"<<endl;
+                }
+                else
+                {
+                    cout << "Ocupado"<<endl;
+                }
+            }
+            else
+            {
+                cout << "Datos invalidos"<<endl;
+            }
+        }
+
+        else if (opcion == 3)
+        {
+            char fila;
+            int asiento;
+
+            cout << "Fila (A-O): ";
+            cin >> fila;
+            cout << "Asiento (1-20): ";
+            cin >> asiento;
+
+            int f = fila - 'A';
+            int a = asiento - 1;
+
+            if (f >= 0 && f < filas && a >= 0 && a < asientos)
+            {
+                if (sala[f][a] == 'X')
+                {
+                    sala[f][a] = '_';
+                    cout << "Cancelado" << endl;
+                }
+                else
+                {
+                    cout << "Ya esta libre" <<endl;
+                }
+            }
+            else
+            {
+                cout << "Datos invalidos"<<endl;
+            }
+        }
+    }
+
+}
+
+
+    
+}
+
+
+
 void problem_13(){
 
     int galaxia[6][8] = {
